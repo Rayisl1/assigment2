@@ -1,4 +1,9 @@
 package structures;
-
-public class MyQueue {
+import models.MyLinkedList;
+public class MyQueue<T> {
+    private MyLinkedList<T> list = new MyLinkedList<>();
+    public void enqueue(T item) { list.addLast(item); }
+    public T dequeue() { T item = list.getFirst(); list.removeFirst(); return item; }
+    public T peek() { return list.getFirst(); }
+    public int size() { return list.size(); }
 }
